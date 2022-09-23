@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,13 +17,55 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="wdZ-AV-snM">
-                                <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="bookListCell" id="wdZ-AV-snM" customClass="BookListTableViewCell" customModule="BookStore" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="93.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wdZ-AV-snM" id="6Lz-nD-dEy">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="93.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Tzu-aB-pRd">
+                                            <rect key="frame" x="2" y="2" width="410" height="89.5"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(The Title Will Go Here)" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nDm-4F-yYt">
+                                                    <rect key="frame" x="0.0" y="0.0" width="410" height="60.5"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="yHt-vF-3qL">
+                                                    <rect key="frame" x="0.0" y="68.5" width="410" height="21"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Author)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8E8-Ey-4Mt">
+                                                            <rect key="frame" x="0.0" y="0.0" width="63.5" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="(Rating)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rcA-CH-1mt">
+                                                            <rect key="frame" x="71.5" y="0.0" width="338.5" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="Tzu-aB-pRd" secondAttribute="bottom" constant="2" id="H63-yk-mN4"/>
+                                        <constraint firstItem="Tzu-aB-pRd" firstAttribute="leading" secondItem="6Lz-nD-dEy" secondAttribute="leading" constant="2" id="Ql1-VE-DLs"/>
+                                        <constraint firstItem="Tzu-aB-pRd" firstAttribute="top" secondItem="6Lz-nD-dEy" secondAttribute="top" constant="2" id="dEY-Gj-LXG"/>
+                                        <constraint firstAttribute="trailing" secondItem="Tzu-aB-pRd" secondAttribute="trailing" constant="2" id="miR-zs-kyH"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="bookAuthorLabel" destination="8E8-Ey-4Mt" id="TTM-hR-6Yi"/>
+                                    <outlet property="bookRatingLabel" destination="rcA-CH-1mt" id="XHQ-az-I4f"/>
+                                    <outlet property="bookTitleLabel" destination="nDm-4F-yYt" id="gGj-P2-PvE"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -30,7 +73,9 @@
                             <outlet property="delegate" destination="j5Z-P8-qwx" id="6DM-Jn-saF"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="773-ds-j61"/>
+                    <navigationItem key="navigationItem" id="773-ds-j61">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="eNz-rp-1ZI"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hr8-fd-54b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
