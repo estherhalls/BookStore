@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -18,24 +19,24 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="bookListCell" id="wdZ-AV-snM" customClass="BookListTableViewCell" customModule="BookStore" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="44.5" width="414" height="93.5"/>
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="96"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wdZ-AV-snM" id="6Lz-nD-dEy">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="93.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="96"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Tzu-aB-pRd">
-                                            <rect key="frame" x="2" y="2" width="410" height="89.5"/>
+                                            <rect key="frame" x="2" y="2" width="410" height="92"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(The Title Will Go Here)" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nDm-4F-yYt">
-                                                    <rect key="frame" x="0.0" y="0.0" width="410" height="60.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="410" height="63"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="yHt-vF-3qL">
-                                                    <rect key="frame" x="0.0" y="68.5" width="410" height="21"/>
+                                                    <rect key="frame" x="0.0" y="71" width="410" height="21"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Author)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8E8-Ey-4Mt">
                                                             <rect key="frame" x="0.0" y="0.0" width="63.5" height="21"/>
@@ -53,6 +54,12 @@
                                                 </stackView>
                                             </subviews>
                                         </stackView>
+                                        <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="(Title Will Go Here)" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3yN-Lg-C03">
+                                            <rect key="frame" x="111" y="-16" width="97" height="34"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="bottom" secondItem="Tzu-aB-pRd" secondAttribute="bottom" constant="2" id="H63-yk-mN4"/>
@@ -80,6 +87,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hr8-fd-54b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="934.78260869565224" y="186.83035714285714"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="kKW-UJ-3Tp">
+            <objects>
+                <viewController id="UkW-Wg-L3E" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="71F-sv-uvw">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="xrf-Bo-eG4"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rA9-oK-dLs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1623" y="187"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dan-hO-odO">
