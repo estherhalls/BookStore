@@ -17,15 +17,16 @@ class BookController {
     
     // MARK: - CRUD
     // Create:
-    func createBook(title: String, author: String, rating: Double){
-        let book = Book(title: title, author: author, rating: rating)
+    func createBook(title: String, author: String, rating: Double, synopsis: String){
+        let book = Book(title: title, author: author, rating: rating, synopsis: synopsis)
         books.append(book)
     }
     // Update:
-    func updateBook(book: Book, title: String, author: String, rating: Double){
+    func updateBook(book: Book, title: String, author: String, rating: Double, synopsis: String){
         book.title = title
         book.author = author
         book.rating = rating
+        book.synopsis = synopsis
     }
     // Delete:
     func delete(book: Book){
