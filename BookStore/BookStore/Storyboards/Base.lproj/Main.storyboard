@@ -19,33 +19,33 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="bookListCell" id="wdZ-AV-snM" customClass="BookListTableViewCell" customModule="BookStore" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="44.5" width="414" height="98.5"/>
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="99.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wdZ-AV-snM" id="6Lz-nD-dEy">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="98.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="99.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Tzu-aB-pRd">
-                                            <rect key="frame" x="2" y="2" width="410" height="94.5"/>
+                                            <rect key="frame" x="2" y="2" width="410" height="95.5"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(The Title Will Go Here)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nDm-4F-yYt">
-                                                    <rect key="frame" x="0.0" y="0.0" width="410" height="65.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="410" height="66.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="yHt-vF-3qL">
-                                                    <rect key="frame" x="0.0" y="73.5" width="410" height="21"/>
+                                                    <rect key="frame" x="0.0" y="74.5" width="410" height="21"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Author)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8E8-Ey-4Mt">
-                                                            <rect key="frame" x="0.0" y="0.0" width="63.5" height="21"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="(Author)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8E8-Ey-4Mt">
+                                                            <rect key="frame" x="0.0" y="0.0" width="341" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="(Rating)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rcA-CH-1mt">
-                                                            <rect key="frame" x="71.5" y="0.0" width="338.5" height="21"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Rating)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rcA-CH-1mt">
+                                                            <rect key="frame" x="349" y="0.0" width="61" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -66,6 +66,7 @@
                                     <outlet property="bookAuthorLabel" destination="8E8-Ey-4Mt" id="TTM-hR-6Yi"/>
                                     <outlet property="bookRatingLabel" destination="rcA-CH-1mt" id="XHQ-az-I4f"/>
                                     <outlet property="bookTitleLabel" destination="nDm-4F-yYt" id="gGj-P2-PvE"/>
+                                    <segue destination="UkW-Wg-L3E" kind="show" identifier="toDetailVC" id="Qym-el-U4e"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -75,27 +76,125 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="773-ds-j61">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="eNz-rp-1ZI"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="eNz-rp-1ZI">
+                            <connections>
+                                <segue destination="UkW-Wg-L3E" kind="show" id="8aC-Oe-rWu"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hr8-fd-54b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="934.78260869565224" y="186.83035714285714"/>
         </scene>
-        <!--View Controller-->
+        <!--Book Detail View Controller-->
         <scene sceneID="kKW-UJ-3Tp">
             <objects>
-                <viewController id="UkW-Wg-L3E" sceneMemberID="viewController">
+                <viewController id="UkW-Wg-L3E" customClass="BookDetailViewController" customModule="BookStore" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="71F-sv-uvw">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tell us about this book..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vDR-hq-VkO">
+                                <rect key="frame" x="8" y="96" width="398" height="30"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="IEg-jz-hWs">
+                                <rect key="frame" x="157" y="147" width="100" height="97.5"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="fYe-8C-Iy4"/>
+                                    <constraint firstAttribute="width" secondItem="IEg-jz-hWs" secondAttribute="height" multiplier="1:1" id="vfx-7Y-YSY"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="IBH-dt-y4m">
+                                <rect key="frame" x="10" y="256" width="394" height="76"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="(Enter Title)" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Aa-Is-6au">
+                                        <rect key="frame" x="0.0" y="0.0" width="394" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Mdh-8v-3fl">
+                                        <rect key="frame" x="0.0" y="42" width="394" height="34"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="(Enter Author)" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yic-ug-6sw">
+                                                <rect key="frame" x="0.0" y="0.0" width="268" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="(Enter Rating)" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eaA-jC-Xju">
+                                                <rect key="frame" x="276" y="0.0" width="118" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="(Enter Book Synopsis)" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="8oL-7e-lpr">
+                                <rect key="frame" x="10" y="336" width="394" height="415"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G9k-PJ-rkv">
+                                <rect key="frame" x="10" y="759" width="394" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Jyj-8Z-lpH"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Clear Form">
+                                    <color key="baseBackgroundColor" red="0.90983636600455053" green="0.26962530563466613" blue="0.13392433602127723" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="clearButtonTapped:" destination="UkW-Wg-L3E" eventType="touchUpInside" id="JXs-s2-KGf"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="xrf-Bo-eG4"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="IEg-jz-hWs" firstAttribute="centerX" secondItem="xrf-Bo-eG4" secondAttribute="centerX" id="3Ov-hc-1zk"/>
+                            <constraint firstItem="xrf-Bo-eG4" firstAttribute="trailing" secondItem="vDR-hq-VkO" secondAttribute="trailing" constant="8" id="4Ga-hh-kuR"/>
+                            <constraint firstItem="G9k-PJ-rkv" firstAttribute="top" secondItem="8oL-7e-lpr" secondAttribute="bottom" constant="8" id="7ea-KH-p0U"/>
+                            <constraint firstItem="vDR-hq-VkO" firstAttribute="top" secondItem="xrf-Bo-eG4" secondAttribute="top" constant="8" id="ErE-Is-KXT"/>
+                            <constraint firstItem="xrf-Bo-eG4" firstAttribute="bottom" secondItem="G9k-PJ-rkv" secondAttribute="bottom" constant="10" id="IG4-cm-1VQ"/>
+                            <constraint firstItem="G9k-PJ-rkv" firstAttribute="leading" secondItem="xrf-Bo-eG4" secondAttribute="leading" constant="10" id="SvM-0C-LK0"/>
+                            <constraint firstItem="8oL-7e-lpr" firstAttribute="leading" secondItem="xrf-Bo-eG4" secondAttribute="leading" constant="10" id="ZsX-u1-u5A"/>
+                            <constraint firstItem="IBH-dt-y4m" firstAttribute="leading" secondItem="xrf-Bo-eG4" secondAttribute="leading" constant="10" id="bg4-X4-jig"/>
+                            <constraint firstItem="IBH-dt-y4m" firstAttribute="top" secondItem="IEg-jz-hWs" secondAttribute="bottom" constant="10" id="cVh-8z-NV7"/>
+                            <constraint firstItem="xrf-Bo-eG4" firstAttribute="trailing" secondItem="8oL-7e-lpr" secondAttribute="trailing" constant="10" id="i2c-sk-fm8"/>
+                            <constraint firstItem="vDR-hq-VkO" firstAttribute="leading" secondItem="xrf-Bo-eG4" secondAttribute="leading" constant="8" id="iEo-1h-066"/>
+                            <constraint firstItem="IEg-jz-hWs" firstAttribute="top" secondItem="vDR-hq-VkO" secondAttribute="bottom" constant="20" id="kPf-UY-9X1"/>
+                            <constraint firstItem="xrf-Bo-eG4" firstAttribute="trailing" secondItem="IBH-dt-y4m" secondAttribute="trailing" constant="10" id="kqc-gv-AOC"/>
+                            <constraint firstItem="8oL-7e-lpr" firstAttribute="top" secondItem="IBH-dt-y4m" secondAttribute="bottom" constant="4" id="pwk-DN-wfE"/>
+                            <constraint firstItem="xrf-Bo-eG4" firstAttribute="trailing" secondItem="G9k-PJ-rkv" secondAttribute="trailing" constant="10" id="u4J-DB-bZ4"/>
+                            <constraint firstItem="vDR-hq-VkO" firstAttribute="centerX" secondItem="xrf-Bo-eG4" secondAttribute="centerX" id="wCy-3v-p1d"/>
+                        </constraints>
                     </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="bAb-Np-SUX">
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="TAu-8j-NW0">
+                            <connections>
+                                <action selector="saveButtonTapped:" destination="UkW-Wg-L3E" id="ORa-jd-ARP"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="bookAuthorTextField" destination="Yic-ug-6sw" id="7xz-tA-yBg"/>
+                        <outlet property="bookRatingTextField" destination="eaA-jC-Xju" id="gul-0D-uK8"/>
+                        <outlet property="bookSynopsisTextField" destination="8oL-7e-lpr" id="lpC-rH-a5t"/>
+                        <outlet property="bookTitleTextField" destination="8Aa-Is-6au" id="n77-ta-rBO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rA9-oK-dLs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1623" y="187"/>
+            <point key="canvasLocation" x="1762" y="187"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dan-hO-odO">
@@ -116,7 +215,14 @@
             <point key="canvasLocation" x="24.637681159420293" y="186.83035714285714"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Qym-el-U4e"/>
+    </inferredMetricsTieBreakers>
     <resources>
+        <image name="photo.fill" catalog="system" width="128" height="93"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
