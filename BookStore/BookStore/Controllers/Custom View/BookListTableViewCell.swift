@@ -15,7 +15,7 @@ class BookListTableViewCell: UITableViewCell {
     func configureCell(with book: Book){
         bookTitleLabel.text = book.title
         bookAuthorLabel.text = book.author
-        bookRatingLabel.text = "\(book.rating)"
+        bookRatingLabel.text = String(book.rating)
     }
 //    override func awakeFromNib() {
 //        super.awakeFromNib()

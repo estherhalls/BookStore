@@ -10,12 +10,20 @@ import Foundation
 class Book {
     var title: String
     var author: String
-    var rating: Int
+    var rating: Double
     
-    init(title: String, author: String, rating: Int){
+    init(title: String, author: String, rating: Double){
         self.title = title
         self.author = author
         self.rating = rating
         
     } // End of Init
 } // End of Class
+
+extension Book: Equatable {
+    static func == (lhs: Book, rhs: Book) -> Bool {
+        return lhs.author == rhs.author &&
+        lhs.title == rhs.title &&
+        lhs.rating == rhs.rating
+    }
+}

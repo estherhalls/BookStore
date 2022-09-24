@@ -17,9 +17,22 @@ class BookController {
     
     // MARK: - CRUD
     // Create:
-    func create(title: String, author: String, rating: Int){
+    func createBook(title: String, author: String, rating: Double){
         let book = Book(title: title, author: author, rating: rating)
         books.append(book)
     }
+    // Update:
+    func updateBook(book: Book, title: String, author: String, rating: Double){
+        book.title = title
+        book.author = author
+        book.rating = rating
+    }
+    // Delete:
+    func delete(book: Book){
+        guard let index = books.firstIndex(of: book)
+        else {return}
+        books.remove(at: index)
+    }
+    
     
 } // End of Class
